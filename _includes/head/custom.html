@@ -1,23 +1,69 @@
+```html id="0d8h6m"
 <div class="custom-header">
 
-  <img src="/assets/images/mikusky.jpg" class="header-bg">
+  <div class="overlay-box">
 
-  <div class="header-overlay">
+    <h1>안녕하세요</h1>
 
-    <div class="header-box">
+    <div class="custom-search">
 
-      <div class="header-title">
-        안녕하세요
-      </div>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="검색"
+      >
 
-      <div class="header-search">
-        <button class="search__toggle" type="button">
-          🔍 검색
-        </button>
-      </div>
+      <div id="search-results"></div>
 
     </div>
 
   </div>
 
 </div>
+
+<script>
+const posts = [
+  {% for post in site.posts %}
+  {
+    title: {{ post.title | jsonify }},
+    url: {{ post.url | relative_url | jsonify }},
+    content: {{ post.content | strip_html | normalize_whitespace | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+];
+
+const input = document.getElementById("search-input");
+const results = document.getElementById("search-results");
+
+input.addEventListener("input", function () {
+
+  const keyword = input.value.toLowerCase();
+
+  results.innerHTML = "";
+
+  if (keyword.length === 0) {
+    return;
+  }
+
+  const filtered = posts.filter(post =>
+    post.title.toLowerCase().includes(keyword) ||
+    post.content.toLowerCase().includes(keyword)
+  );
+
+  filtered.forEach(post => {
+
+    const item = document.createElement("a");
+
+    item.href = post.url;
+    item.className = "search-item";
+
+    item.innerHTML = `
+      <strong>${post.title}</strong>
+    `;
+
+    results.appendChild(item);
+  });
+});
+</script>
+```
+
