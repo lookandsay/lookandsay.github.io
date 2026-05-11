@@ -115,9 +115,9 @@ analytics:
 # Site Author
 author:
   name             : "문수혁"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           :"/assets/images/mikublog.jpg"
   bio              : "보안 공부중입니다"
-  location         : "Somewhere"
+  location         : # "Somewhere"
   email            :
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
