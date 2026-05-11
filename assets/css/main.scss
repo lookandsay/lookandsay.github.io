@@ -8,3 +8,101 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 @import "custom/custom";
+
+
+.custom-header {
+  width: 100%;
+  height: 420px;
+
+  background-image: url('/assets/images/mikusky.jpg');
+  background-size: cover;
+  background-position: center top;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.overlay-box {
+
+  width: 70%;
+  height: 160px;
+
+  background: rgba(255,255,255,0.88);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+
+  box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+}
+
+.overlay-box h1 {
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.custom-search {
+  position: relative;
+  width: 320px;
+}
+
+#search-input {
+
+  width: 100%;
+  padding: 16px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #e5e5e5;
+
+  font-size: 16px;
+  outline: none;
+}
+
+#search-input::placeholder {
+  color: #888;
+}
+
+#search-results {
+
+  position: absolute;
+
+  top: 70px;
+  left: 0;
+
+  width: 100%;
+
+  background: white;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+  z-index: 999;
+}
+
+.search-item {
+
+  display: block;
+
+  padding: 14px;
+
+  color: black;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #eee;
+}
+
+.search-item:hover {
+  background: #f5f5f5;
+}
+
