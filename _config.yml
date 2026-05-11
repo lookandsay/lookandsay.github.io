@@ -325,5 +325,5 @@ defaults:
     values:
       author_profile: true
       sidebar:
-        nav: "main"
+        nav: "sidebar-category"
 
