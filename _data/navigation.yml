@@ -1,18 +1,1 @@
-main:
-  - title: "개발"
-    url: /categories/development/
-
-  - title: "CTF/Wargame"
-    url: /categories/ctf/
-
-  - title: "BugBounty"
-    url: /categories/bugbounty/
-
-  - title: "블로그/기술문서"
-    url: /categories/blog/
-
-  - title: "논문/컨퍼런스"
-    url: /categories/paper/
-
-  - title: "공모전/자격증"
-    url: /categories/certificate/
+main: []
