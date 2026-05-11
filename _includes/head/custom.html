@@ -3,7 +3,7 @@
 
   <div class="overlay-box">
 
-    <h1>안녕하세요</h1>
+    <h1>Security Blog</h1>
 
     <div class="custom-search">
 
@@ -57,13 +57,42 @@ input.addEventListener("input", function () {
     item.href = post.url;
     item.className = "search-item";
 
+    let content = post.content;
+
+    let index = content.toLowerCase().indexOf(keyword);
+
+    let preview = "";
+
+    if (index !== -1) {
+
+      let start = Math.max(0, index - 35);
+      let end = Math.min(content.length, index + 80);
+
+      preview = content.substring(start, end);
+
+      const regex = new RegExp(keyword, "gi");
+
+      preview = preview.replace(
+        regex,
+        `<span class="highlight">${keyword}</span>`
+      );
+    }
+
     item.innerHTML = `
-      <strong>${post.title}</strong>
+      <div class="search-title">
+        ${post.title}
+      </div>
+
+      <div class="search-preview">
+        ${preview}
+      </div>
     `;
 
     results.appendChild(item);
   });
 });
 </script>
+
+
 
 
