@@ -114,9 +114,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "문수혁"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "보안 공부중입니다"
   location         : "Somewhere"
   email            :
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
