@@ -1,25 +1,15 @@
 
 <div class="custom-header">
-
   <div class="overlay-box">
-
     <h1>Security Blog</h1>
-
     <div class="custom-search">
-
-      <input
-        type="text"
-        id="search-input"
-        placeholder="검색"
-      >
-
+      <input type="text" id="search-input" placeholder="검색">
       <div id="search-results"></div>
-
     </div>
-
   </div>
-
 </div>
+
+<div class="recent-posts-title">최근 포스트</div>
 
 <script>
 const posts = [
@@ -36,14 +26,9 @@ const input = document.getElementById("search-input");
 const results = document.getElementById("search-results");
 
 input.addEventListener("input", function () {
-
   const keyword = input.value.toLowerCase();
-
   results.innerHTML = "";
-
-  if (keyword.length === 0) {
-    return;
-  }
+  if (keyword.length === 0) return;
 
   const filtered = posts.filter(post =>
     post.title.toLowerCase().includes(keyword) ||
@@ -51,46 +36,27 @@ input.addEventListener("input", function () {
   );
 
   filtered.forEach(post => {
-
     const item = document.createElement("a");
-
     item.href = post.url;
     item.className = "search-item";
 
     let content = post.content;
-
     let index = content.toLowerCase().indexOf(keyword);
-
     let preview = "";
 
     if (index !== -1) {
-
       let start = Math.max(0, index - 35);
       let end = Math.min(content.length, index + 80);
-
       preview = content.substring(start, end);
-
       const regex = new RegExp(keyword, "gi");
-
-      preview = preview.replace(
-        regex,
-        `<span class="highlight">${keyword}</span>`
-      );
+      preview = preview.replace(regex, `<span class="highlight">${keyword}</span>`);
     }
 
     item.innerHTML = `
-      <div class="search-title">
-        ${post.title}
-      </div>
-
-      <div class="search-preview">
-        ${preview}
-      </div>
+      <div class="search-title">${post.title}</div>
+      <div class="search-preview">${preview}</div>
     `;
-
     results.appendChild(item);
   });
 });
 </script>
-
-
