@@ -88,12 +88,15 @@ search: false
 
 #search-results {
 
+#search-results {
+
   position: absolute;
 
   top: 65px;
+
   right: 0;
 
-  width: 100%;
+  width: 430px;
 
   max-height: 400px;
 
@@ -103,9 +106,12 @@ search: false
 
   border-radius: 18px;
 
+  overflow: hidden;
+
   box-shadow: 0 10px 30px rgba(0,0,0,0.18);
 
   z-index: 999;
+}
 }
 }
 
