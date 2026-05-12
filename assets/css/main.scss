@@ -11,6 +11,7 @@ search: false
 
 
 
+
 .custom-header {
 
   width: 100%;
@@ -43,6 +44,8 @@ search: false
   padding: 0 60px;
 
   box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+
+  position: relative;
 }
 
 .overlay-box h1 {
@@ -62,6 +65,8 @@ search: false
   position: relative;
 
   width: 240px;
+
+  flex-shrink: 0;
 }
 
 #search-input {
@@ -86,11 +91,6 @@ search: false
 
 #search-results {
 
-#search-results {
-
-
-#search-results {
-
   position: absolute;
 
   top: calc(100% + 12px);
@@ -110,10 +110,6 @@ search: false
   box-shadow: 0 10px 35px rgba(0,0,0,0.18);
 
   z-index: 99999;
-}
-
-
-}
 }
 
 .search-item {
@@ -161,5 +157,7 @@ search: false
 
   font-weight: 700;
 }
+
+
 
 
